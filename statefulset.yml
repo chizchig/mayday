@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: web-gulf
+      app: gulf-web
   serviceName: gulf-dns
   replicas: 3
   minReadySeconds: 10
@@ -14,19 +14,19 @@ spec:
     metadata:
       labels:
         app: gulf-web
-      spec:
-        terminationGracePeriodSeconds: 10
-        imagePullSecrets: 
+    spec:
+      terminationGracePeriodSeconds: 10
+      imagePullSecrets: 
         - name: dockerhub-credentials
-        containers:
+      containers:
         - name: gulf-web
           image: dennar/gulf-web
           ports:
-          - containerPort: 8080
-            name: gulf 
+            - containerPort: 8080
+              name: gulf 
           volumeMounts:
-          - name: www
-            mountPath: /var/www/html
+            - name: www
+              mountPath: /var/www/html
   volumeClaimTemplates:
     - metadata:
         name: www
