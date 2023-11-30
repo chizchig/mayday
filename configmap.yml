@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap 
+metadata:
+  namespace: dev
+  name: gulf-configmap
+data:
+  secret.yaml: |-
+    immutable: true
