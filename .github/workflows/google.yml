@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2.5.0
 
     - name: Set up kubectl
-      uses: azure/k8s-set-context@v2
+      uses: azure/k8s-set-context@v2.1.0
       with:
         method: kubeconfig
         kubeconfig: ${{ secrets.KUBE_CONFIG }}
