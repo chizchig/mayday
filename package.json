@@ -1,0 +1,11 @@
+{
+  "name": "gulfstream",
+  "version": "1.0.0",
+  "description": "A gulfstream application",
+  "main": "server.js",
+  "scripts": {
+    "test": "webpack --mode=production"
+  },
+  "author": "C. Dennar",
+  "license": "ISC"
+}
