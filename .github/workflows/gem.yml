@@ -18,8 +18,7 @@ jobs:
           run: |
             # Remove leading and trailing whitespaces
             secret_key="${{ secrets.GCP_SA_KEY }}"
-            secret_key="${secret_key#"${secret_key%%[![:space:]]*}"}"
-            secret_key="${secret_key%"${secret_key##*[![:space:]]}"}"
+            secret_key="$(echo -n "$secret_key" | tr -d '[:space:]')"
             
             # Decode the base64-encoded key and print it
             decoded_key=$(echo -n "$secret_key" | base64 -d -)
@@ -30,6 +29,7 @@ jobs:
             
             # Activate service account
             gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
+        
         
         
         
