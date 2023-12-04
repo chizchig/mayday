@@ -16,8 +16,15 @@ jobs:
   
         - name: Prepare service account key
           run: |
-           base64 -d <<< "${{ secrets.GCP_SA_KEY }}" > /tmp/gcp-key.json
-           gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
+                # Remove leading and trailing whitespaces
+                secret_key="${{ secrets.GCP_SA_KEY }}"
+                secret_key="${secret_key#"${secret_key%%[![:space:]]*}"}"
+                secret_key="${secret_key%"${secret_key##*[![:space:]]}"}"
+            
+                # Decode the base64-encoded key
+                 echo -n "$secret_key" | base64 -d > /tmp/gcp-key.json
+                gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
+        
           
         - name: Set project ID
           run: |
