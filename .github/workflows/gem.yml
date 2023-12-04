@@ -22,7 +22,7 @@ jobs:
             secret_key="${secret_key%"${secret_key##*[![:space:]]}"}"
             
             # Decode the base64-encoded key and print it
-            decoded_key=$(echo -n "$secret_key" | base64 -d)
+            decoded_key=$(echo -n "$secret_key" | base64 -d -)
             echo "Decoded Key: $decoded_key"
             
             # Write the decoded key to a file
@@ -30,6 +30,7 @@ jobs:
             
             # Activate service account
             gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
+        
         
         
           
