@@ -16,14 +16,13 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Configure Google Cloud CLI
+       - name: Configure Google Cloud CLI
         run: |
-          decoded_content=$(echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode)
-          echo "Decoded Content: $decoded_content"
-          echo "$decoded_content" > $HOME/gcp-key.json
+          echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode > $HOME/gcp-key.json
           export GOOGLE_APPLICATION_CREDENTIALS=$HOME/gcp-key.json
           gcloud auth activate-service-account --key-file=$HOME/gcp-key.json
           gcloud config set project "${{ secrets.GCP_PROJECT_ID }}"
+      
       
 
       - name: Build and Deploy with Skaffold
