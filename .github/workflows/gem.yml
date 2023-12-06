@@ -19,12 +19,11 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - name: Debug Information
+      - name: Verify gcloud authentication
         run: |
-            echo "Current Project ID: $GCP_PROJECT_ID"
             gcloud auth list
             gcloud config list
-            cat /home/runner/.docker/config.json
+        
         
 
       - name: Set up Docker Buildx
