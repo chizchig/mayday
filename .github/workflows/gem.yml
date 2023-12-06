@@ -24,6 +24,7 @@ jobs:
             echo "Current Project ID: $GCP_PROJECT_ID"
             gcloud auth list
             gcloud config list
+            cat /home/runner/.docker/config.json
         
 
       - name: Configure Docker to use the gcloud command-line tool
