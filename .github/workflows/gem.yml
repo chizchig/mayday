@@ -3,7 +3,7 @@ name: Deploy to GKE with Skaffold
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
