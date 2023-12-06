@@ -37,4 +37,4 @@ jobs:
           kubectl-version: 1.25.0
 
       - name: Deploy with Skaffold
-        run: skaffold run 
+        run: skaffold run -p ${{secrets.GCP_PROJECT_ID}}
