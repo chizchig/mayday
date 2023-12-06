@@ -1,0 +1,17 @@
+apiVersion: skaffold/v4beta7
+kind: Config
+metadata:
+  name: mayday
+build:
+  artifacts:
+    - image: dennar/gulf-web
+      docker:
+        dockerfile: Dockerfile
+manifests:
+  rawYaml:
+    - kubernetes-configs/configmap.yml
+    - kubernetes-configs/pv.yml
+    - kubernetes-configs/pvc.yml
+    - kubernetes-configs/secret.yml
+    - kubernetes-configs/service.yml
+    - kubernetes-configs/statefulset.yml
