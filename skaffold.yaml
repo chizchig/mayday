@@ -4,7 +4,7 @@ metadata:
   name: mayday
 build:
   artifacts:
-    - image: dennar/gulf-web
+    - image: gcr.io/roar1984/gulf-web
       docker:
         dockerfile: Dockerfile
 manifests:
