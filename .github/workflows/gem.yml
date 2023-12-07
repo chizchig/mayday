@@ -1,4 +1,4 @@
-name: Deploy to GKE with Skaffold
+name: Skaffold Deploy
 
 on:
   push:
@@ -12,24 +12,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Prepare service account key
-        run: |
-          echo -n "${{ secrets.GCP_SA_KEY }}" | base64 --decode > /tmp/gcp-key.json
-          gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.3.0
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
 
       - name: Configure Docker to use the gcloud command-line tool
         run: gcloud auth configure-docker
 
-      - name: Build and push Docker image
-        run: |
-          docker build -t gcr.io/${{secrets.GCP_PROJECT_ID}}/gulf-web:latest .
-          docker push gcr.io/${{secrets.GCP_PROJECT_ID}}/gulf-web:latest
-
-      - name: Set up Skaffold
-        uses: hiberbee/github-action-skaffold@1.27.0
+      - name: Build and deploy with Skaffold
+        uses: hiberbee/github-action-skaffold@v1.27.0
         with:
-          skaffold-version: 1.38.0
-          kubectl-version: 1.25.0
-
-      - name: Deploy with Skaffold
-        run: skaffold run -p ${{secrets.GCP_PROJECT_ID}}
+          skaffold-version: 2.8.0
+          kubectl-version: 1.28.0
+          command: run
