@@ -22,7 +22,7 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - name: Configure Google Cloud account to use the gcloud command-line tool
+      - name: Authenticate with Google Cloud
         run: gcloud auth login
 
       - name: Build and deploy with Skaffold
