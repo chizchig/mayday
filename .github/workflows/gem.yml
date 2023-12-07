@@ -22,8 +22,8 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - name: Configure Docker to use the gcloud command-line tool
-        run: gcloud auth configure-docker
+      - name: Configure Google Cloud account to use the gcloud command-line tool
+        run: gcloud auth login
 
       - name: Build and deploy with Skaffold
         uses: hiberbee/github-action-skaffold@latest
