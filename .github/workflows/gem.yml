@@ -3,7 +3,7 @@ name: Skaffold Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -26,8 +26,8 @@ jobs:
         run: gcloud auth configure-docker
 
       - name: Build and deploy with Skaffold
-        uses: hiberbee/github-action-skaffold@v1.27.0
+        uses: hiberbee/github-action-skaffold@latest
         with:
-          skaffold-version: 2.8.0
-          kubectl-version: 1.28.0
-          command: run
+            skaffold-version: 2.8.0
+            kubectl-version: 1.25.0
+            command: run
