@@ -20,15 +20,24 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
+      - name: Checkout Terraform repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+            terraform_version: 0.15.5
+
       - name: Initialize Terraform
         run: |
-          cd path/to/terraform/files
-          terraform init
-
-      - name: Apply Terraform Changes
+            terraform init
+  
+      - name: Plan Terraform changes
         run: |
-          cd path/to/terraform/files
-          terraform apply -auto-approve
+           terraform plan -out=tfplan
+          
+      - name: Apply Terraform changes
+        run: terraform apply -auto-approve tfplan
 
   deploy:
     runs-on: ubuntu-latest
