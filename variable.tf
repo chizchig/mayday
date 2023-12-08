@@ -1,6 +1,6 @@
 variable "cluster" {
   type = string
-  default = "gulf_cluster"
+  default = "gulf-cluster"
 }
 
 variable "region" {
