@@ -71,7 +71,8 @@ jobs:
           kubectl-version: 1.25.0
 
       - name: Set platform for Skaffold
+        run: skaffold config set --kube-context=gulf-cluster local-cluster true
+          
+      - name: Build and deploy with Skaffold
         run: skaffold run --platform linux
 
-      - name: Build and deploy with Skaffold
-        run: skaffold run
