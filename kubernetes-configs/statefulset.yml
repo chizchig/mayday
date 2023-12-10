@@ -36,3 +36,11 @@ spec:
         resources:
           requests:
             storage: 20Gi
+
+  initContainers:
+    - name: gke-gcloud-auth
+      image: google/cloud-sdk:latest
+      command:
+        - '/bin/sh'
+        - '-c'
+        - 'gke-gcloud-auth-plugin'
