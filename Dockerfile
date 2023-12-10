@@ -25,8 +25,10 @@ WORKDIR /app
 # Copy only the necessary files from the builder image
 COPY --from=builder /app .
 
-# Install gke-gcloud-auth-plugin
-RUN apt-get update && apt-get install -y gke-gcloud-auth-plugin
+# Update package lists and install gke-gcloud-auth-plugin
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends gke-gcloud-auth-plugin && \
+    rm -rf /var/lib/apt/lists/*
 
 # Expose the port that your app will run on
 EXPOSE 3000
