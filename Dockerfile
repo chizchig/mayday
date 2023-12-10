@@ -1,5 +1,5 @@
-# Use an official Node.js runtime as a base image
-FROM node:14
+# First Phase: Build Phase
+FROM node:14 AS builder
 
 # Set the working directory to /app
 WORKDIR /app
@@ -12,6 +12,21 @@ RUN npm install
 
 # Copy the current directory contents into the container at /app
 COPY . .
+
+# Perform any build steps if needed (e.g., compiling TypeScript, building assets)
+# RUN npm run build
+
+# Second Phase: Runtime Phase
+FROM node:14
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy only the necessary files from the builder image
+COPY --from=builder /app .
+
+# Install gke-gcloud-auth-plugin
+RUN apt-get update && apt-get install -y gke-gcloud-auth-plugin
 
 # Expose the port that your app will run on
 EXPOSE 3000
