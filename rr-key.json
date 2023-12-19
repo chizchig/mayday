@@ -1,0 +1,14 @@
+{
+    "type": "service_account",
+    "project_id": "roar1984",
+    "private_key_id": "565568677e11a56ac9e2d185b223d6a8926a774c",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCzpogW8gqVQU1l\nj/mcNsOS6eVO0DyCxn9eE1xOGpXZ8C1pBW4EPvymh5nkuCLtrJFTf0NRqSL4ZGn/\n2NCbZCktu90/FfF/nEGQyzGiG8LT6Hnpa7JhqyXTjTLWRg7B25Qh8nNY6FgCOd9b\nK8ZlQyn4Zy2bo318Zlkex1eBngmvofVeuirQIY2oYvVHjl7U2AF/BbqPKRKZdlgm\n6WfZkWvAwx0GMnvrfzeVvRh1MhZUkT1pvwEvao5ri51PoMuNfx5xBtSX4PZL1R7Y\nfumr+WuG0JvVjXYGMWPbT56IGVfJL3Dq+tuZ08bOygGPjSfuhoYrbaYGMP3eeDFU\nRjNQwCjdAgMBAAECggEAGI9/IgHvs/WUTvsGwVZUWRC8jpCWATwBfDtR3oSwcXXu\nQ2IgZxi0YlD+F2CcN9mkmaF3suGYfBSAUF/ULzZbkdrR9da6aDuU1CaPb83zThTF\nnAWjAsrK9lfiuBwmVtb98sEqh2BmbdF7KYP70OrEgWcbu2A33urAKt7OZhRU1yum\nbZOMT+rMO+CiYZXSSYM4p4z++BmDhkbZjobeFkHuDlUZr3Aw0iDCT9rtVU+jCDZP\n4waG9YlZjHGnDHnWBL20EqD2WUTliZXOalfwdz7DhQHKMNrpe+kxlq7BS9acMvpK\nXwobaGzB1Afitl4pK9A0gbHeACWGehwUUYQWxxu3gQKBgQDxErvPVeI/E2HvIN5W\nJP15az50dTi9e6I0mLOQYACpkvWK2csOgpIACrMVBdNAcZbxwOC+A271IdZnC5gO\nHALP+BC1jXZWiIqaSQI/dUUbvUVdRNmWg/r05r7RLy/8geyXbK1se0CU5NPTIsp/\nw1GZ8rHqaZ5K90tSqo9haUSbXQKBgQC+xi7ylS485eGmxyS5/yJZp2ZQPA31VYin\n5CwJxc9Z7sv6Qs7k8JeovjZYUPpEB5ycjWCGCxSIYt36RH6daWEGfykb6Z2ftp+v\nOMDD3cRIerYh/vs491i2hJweCi0izYeKobm7P8y9Rhus6ftWAMB+/ivHyHHon0Hi\n/v2Xk1ZrgQKBgEg6yLLSlLs5X3p6aqN86cVbcJcMGDgNtwfzSLnVSd2E/rTflIuA\na6Y/jnCaEjWY0xUUKUJFXRVtUgQF4UU4907AkKEVBYPf3Udk4JuK024AQ6wyWM9U\nM/j0ue+LJ+GMPAsSsNN0CmGSPjVgkzO8ndJ2eQA3LQphFdxq5hLVq4yxAoGAE6kU\n+YcKRthiEu//BvQWNCseTjKCNcBk3viS2Ub7gYcsmlP8QnfRCWDg9OUThaNLLo8b\nXXUS3qNhwQMCEXLkvuin8ep3hhgqCMLOiuD184pB7ur6NPq4t8ae2DGwSR/pUg4s\nt/FxRihNfdp3PnvBWtUS6fnsU07mWWBx/gb/JwECgYBD0+MZblTwn7drAtWSTm5j\ndHKwaJazecOEkKxnYszMvKgJf+p14Jy63OrbsqiM4N0OMCtnTu2OTVtBKKLI5VoY\nVXXYYpXoCvMEFKDL3aJoQaqJxq5oaZqkEEroKq1s9jidL2Z1ZxJ5HQJ8RQwFGhl7\nyJOY94ejF9zrH65w+Qxoew==\n-----END PRIVATE KEY-----\n",
+    "client_email": "revival@roar1984.iam.gserviceaccount.com",
+    "client_id": "105086917093159995287",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/revival%40roar1984.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
+  

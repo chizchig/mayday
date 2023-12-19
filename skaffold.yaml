@@ -1,0 +1,23 @@
+
+apiVersion: skaffold/v4beta7
+kind: Config
+metadata:
+  name: mayday
+build:
+  artifacts:
+    - image: gcr.io/roar1984/gulf-web
+      docker:
+        dockerfile: Dockerfile
+  local:
+    push: false  # Optional, only if you don't want to push to a remote registry
+  tagPolicy:
+    gitCommit: {}
+manifests:
+  rawYaml:
+    - kubernetes-configs/configmap.yml
+    - kubernetes-configs/pv.yml
+    - kubernetes-configs/pvc.yml
+    - kubernetes-configs/secret.yml
+    - kubernetes-configs/service.yml
+    - kubernetes-configs/statefulset.yml
+
