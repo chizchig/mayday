@@ -7,6 +7,11 @@ spec:
   selector:
     matchLabels:
       app: gulf-web
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   serviceName: gulf-dns
   replicas: 3
   minReadySeconds: 10
